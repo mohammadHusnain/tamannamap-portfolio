@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useNavCondense } from "../hooks/useNavCondense";
-
 import { CONTACT_FORM_PATH } from "../constants/links";
 
 const links = [

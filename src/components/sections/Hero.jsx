@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal from "../Reveal";
 import ParallaxImg from "../ParallaxImg";
+import { CONTACT_FORM_PATH } from "../../constants/links";
 
 export default function Hero() {
   return (
@@ -36,7 +37,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal as="div" variant="fade" delay={0.3} className="hero__actions">
-          <Link to="/contact" className="btn">
+          <Link to={CONTACT_FORM_PATH} className="btn">
             Start a Project <span aria-hidden="true">→</span>
           </Link>
           <Link to="/work" className="hero__link">
