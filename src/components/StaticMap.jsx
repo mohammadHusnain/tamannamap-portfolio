@@ -1,4 +1,5 @@
-const ADDRESS = "Lavender Block, Bahria Town, Lahore, Pakistan";
+const ADDRESS =
+  "Office Number: 401 — 4th Floor, 73-Nishtar Block, Bahria Town, Lahore";
 
 // Approximate coordinates for Bahria Town, Lahore — used only to center the
 // map preview. The click-through link is address-based via Google Maps

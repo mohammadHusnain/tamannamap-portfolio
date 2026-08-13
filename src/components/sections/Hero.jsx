@@ -10,7 +10,7 @@ export default function Hero() {
             when supplied — everything else in this section is final. */}
         <ParallaxImg
           speed={0.12}
-          className="hero__photo photo-tone"
+          className="hero__photo"
           src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?w=1600&q=70&auto=format&fit=crop"
           srcSet="
             https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?w=900&q=68&auto=format&fit=crop 900w,
@@ -27,17 +27,12 @@ export default function Hero() {
 
       <div className="hero__content">
         <Reveal as="h1" variant="fade" delay={0.1} className="hero__title">
-          TAMANNA
-          <br />
-          <em>LABS</em>
+          TAMANNA<em>LABS</em>
         </Reveal>
 
         <Reveal as="p" variant="fade" delay={0.2} className="hero__desc">
-          We design, build, and run digital products for teams that need to
-          move fast without breaking things. From web and mobile apps to
-          cloud infrastructure and data platforms, we handle the technology
-          so you can focus on the business. Every engagement is scoped
-          around measurable outcomes, not billable hours.
+          We design, build, and run digital products for teams that move fast —
+          web, mobile, cloud, and data platforms scoped to measurable outcomes.
         </Reveal>
 
         <Reveal as="div" variant="fade" delay={0.3} className="hero__actions">

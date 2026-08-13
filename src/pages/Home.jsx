@@ -1,11 +1,14 @@
+import { lazy, Suspense } from "react";
 import Seo from "../components/Seo";
 import Hero from "../components/sections/Hero";
-import ServicesScroller from "../components/sections/ServicesScroller";
-import WhyChooseUs from "../components/sections/WhyChooseUs";
-import Impact from "../components/sections/Impact";
-import WorkTeaser from "../components/sections/WorkTeaser";
-import Testimonials from "../components/sections/Testimonials";
-import CtaBanner from "../components/sections/CtaBanner";
+import PageLoader from "../components/PageLoader";
+
+const ServicesScroller = lazy(() => import("../components/sections/ServicesScroller"));
+const WhyChooseUs = lazy(() => import("../components/sections/WhyChooseUs"));
+const Impact = lazy(() => import("../components/sections/Impact"));
+const WorkTeaser = lazy(() => import("../components/sections/WorkTeaser"));
+const Testimonials = lazy(() => import("../components/sections/Testimonials"));
+const CtaBanner = lazy(() => import("../components/sections/CtaBanner"));
 
 export default function Home() {
   return (
@@ -16,12 +19,24 @@ export default function Home() {
       />
       <main id="top">
         <Hero />
-        <ServicesScroller />
-        <WhyChooseUs />
-        <Impact />
-        <WorkTeaser />
-        <Testimonials />
-        <CtaBanner />
+        <Suspense fallback={<PageLoader />}>
+          <ServicesScroller />
+        </Suspense>
+        <Suspense fallback={<PageLoader />}>
+          <WhyChooseUs />
+        </Suspense>
+        <Suspense fallback={<PageLoader />}>
+          <Impact />
+        </Suspense>
+        <Suspense fallback={<PageLoader />}>
+          <WorkTeaser />
+        </Suspense>
+        <Suspense fallback={<PageLoader />}>
+          <Testimonials />
+        </Suspense>
+        <Suspense fallback={<PageLoader />}>
+          <CtaBanner />
+        </Suspense>
       </main>
     </>
   );

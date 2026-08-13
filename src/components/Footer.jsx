@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { services } from "../data/services";
 
 const socials = [
   {
@@ -77,12 +78,11 @@ export default function Footer() {
 
           <div className="footer__col">
             <h4>Services</h4>
-            <Link to="/services">Web Development</Link>
-            <Link to="/services">Application Development</Link>
-            <Link to="/services">Cloud &amp; DevOps</Link>
-            <Link to="/services">Cybersecurity</Link>
-            <Link to="/services">Data &amp; AI</Link>
-            <Link to="/services">IT Consulting</Link>
+            {services.map((service) => (
+              <Link key={service.slug} to={`/services#${service.slug}`}>
+                {service.name}
+              </Link>
+            ))}
           </div>
 
           <div className="footer__col">

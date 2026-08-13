@@ -2,16 +2,25 @@ import Reveal from "../Reveal";
 
 const quotes = [
   {
-    text: "They shipped our MVP in nine weeks and stayed on for the scaling work afterward. No handoff gap.",
-    cite: "— Product Lead, E-commerce Platform",
+    text: "TamannaLabs rebuilt our core platform ahead of peak season and handled everything from architecture to deployment. They communicated clearly, hit every milestone, and felt like an extension of our own engineering team.",
+    name: "Ahmed Raza",
+    role: "CTO",
+    company: "PayBridge Solutions",
+    location: "Lahore, Pakistan",
   },
   {
-    text: "The cloud migration cut our infrastructure spend by a third with zero downtime during cutover.",
-    cite: "— Engineering Director, Retail Chain",
+    text: "We had six weeks to ship an investor-ready MVP. They delivered a polished product, set up our cloud infrastructure, and stayed on to help us scale through our first major release in Dubai.",
+    name: "Sara Al-Maktoum",
+    role: "Startup Founder",
+    company: "Nexa Health",
+    location: "Dubai, UAE",
   },
   {
-    text: "Their security audit found issues two other vendors missed, and the fixes shipped the same sprint.",
-    cite: "— CTO, Healthcare Startup",
+    text: "Their DevOps work cut our cloud costs noticeably and turned deployments from a weekly stress test into a routine. Direct, honest, and genuinely invested in the outcome — rare in agency work.",
+    name: "Khalid Hassan",
+    role: "Co-Founder & CTO",
+    company: "Arq Digital",
+    location: "Dubai, UAE",
   },
 ];
 
@@ -24,16 +33,18 @@ export default function Testimonials() {
         </div>
         <div className="testimonials">
           {quotes.map((q, i) => (
-            <Reveal as="blockquote" variant="fade" delay={i * 0.1} className="testimonial" key={q.cite}>
-              <p>"{q.text}"</p>
-              <cite>{q.cite}</cite>
+            <Reveal as="blockquote" variant="fade" delay={i * 0.1} className="testimonial" key={q.name}>
+              <p>&ldquo;{q.text}&rdquo;</p>
+              <footer className="testimonial__author">
+                <cite className="testimonial__name">{q.name}</cite>
+                <span className="testimonial__role">
+                  {q.role}, {q.company}
+                </span>
+                <span className="testimonial__location">{q.location}</span>
+              </footer>
             </Reveal>
           ))}
         </div>
-        <p className="testimonials-note">
-          Sample feedback for illustration — replace with quotes from your own clients
-          before launch.
-        </p>
       </div>
     </section>
   );

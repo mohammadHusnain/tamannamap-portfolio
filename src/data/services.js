@@ -1,5 +1,6 @@
 export const services = [
   {
+    slug: "web-app-development",
     category: "Engineering",
     name: "Web & App Development",
     specs: ["React", "Next.js", "iOS", "Android"],
@@ -9,6 +10,7 @@ export const services = [
       "We design and build web and mobile products end to end — from component architecture to CI/CD — using React, Next.js, and native mobile stacks. Every build is performance-budgeted and accessible from day one.",
   },
   {
+    slug: "cloud-devops",
     category: "Infrastructure",
     name: "Cloud & DevOps",
     specs: ["AWS", "Azure", "CI/CD", "Kubernetes"],
@@ -18,6 +20,7 @@ export const services = [
       "We architect and manage cloud infrastructure on AWS and Azure, build CI/CD pipelines, and containerize workloads with Kubernetes so deploys are boring, fast, and reversible.",
   },
   {
+    slug: "cybersecurity",
     category: "Security",
     name: "Cybersecurity",
     specs: ["Audits", "Pen Testing", "Compliance"],
@@ -27,6 +30,7 @@ export const services = [
       "Security audits, penetration testing, and compliance readiness (SOC 2, ISO 27001) delivered by engineers who also fix what they find — not just report it.",
   },
   {
+    slug: "data-ai",
     category: "Data & AI",
     name: "Data & AI",
     specs: ["Pipelines", "Dashboards", "ML Integration"],
@@ -36,6 +40,7 @@ export const services = [
       "Data pipelines, analytics dashboards, and practical ML integration — we help you get from raw data to decisions your team actually trusts.",
   },
   {
+    slug: "it-consulting",
     category: "Strategy",
     name: "IT Consulting",
     specs: ["Architecture Review", "Roadmapping"],

@@ -28,7 +28,7 @@ export default function Services() {
           </div>
         </section>
 
-        <section className="section section--dark">
+        <section id={first.slug} className="section section--dark service-section">
           <div className="wrap">
             <ServiceRow service={first} reverse={false} />
           </div>
@@ -36,12 +36,13 @@ export default function Services() {
 
         {rest.map((service, i) => {
           const mossBg =
-            service.name === "Cybersecurity" || service.name === "IT Consulting";
+            service.slug === "cybersecurity" || service.slug === "it-consulting";
 
           return (
             <section
-              key={service.name}
-              className={`section${mossBg ? " section--moss" : ""}`}
+              key={service.slug}
+              id={service.slug}
+              className={`section service-section${mossBg ? " section--moss" : ""}`}
             >
               <div className="wrap">
                 <ServiceRow service={service} reverse={i % 2 === 0} />

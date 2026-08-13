@@ -3,6 +3,10 @@ import Seo from "../components/Seo";
 import Reveal from "../components/Reveal";
 import StaticMap from "../components/StaticMap";
 
+const OFFICE_ADDRESS =
+  "Office Number: 401 — 4th Floor, 73-Nishtar Block, Bahria Town, Lahore";
+const CONTACT_EMAIL = "info@tamanalabs.com";
+
 const SERVICES = [
   "Web & App Development",
   "Cloud & DevOps",
@@ -87,11 +91,11 @@ export default function Contact() {
             <div className="contact-intro__meta">
               <div className="contact-info__item">
                 <h4>Email</h4>
-                <a href="mailto:hello@tamanna.example">hello@tamanna.example</a>
+                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               </div>
               <div className="contact-info__item">
                 <h4>Location</h4>
-                <p>Lavender Block, Bahria Town, Lahore, Pakistan</p>
+                <p>{OFFICE_ADDRESS}</p>
               </div>
               <div className="contact-info__item">
                 <h4>Response time</h4>
@@ -104,11 +108,17 @@ export default function Contact() {
             <div className="contact-map-grid">
               <Reveal as="div" variant="fade" delay={0.1} className="contact-map-grid__map">
                 <p className="eyebrow">Find Us</p>
-                <h3>Lavender Block, Bahria Town, Lahore</h3>
+                <h3>{OFFICE_ADDRESS}</h3>
                 <StaticMap />
               </Reveal>
 
-              <Reveal as="div" variant="fade" delay={0.15} className="contact-map-grid__form-col">
+              <Reveal
+                as="div"
+                variant="fade"
+                delay={0.15}
+                id="contact-form"
+                className="contact-map-grid__form-col"
+              >
                 <p className="eyebrow">Get In Touch</p>
                 <h3>Send Us a Message</h3>
                 <form className="cta__form" onSubmit={handleSubmit} noValidate>

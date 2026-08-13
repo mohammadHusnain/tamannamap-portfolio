@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import PageLoader from "./components/PageLoader";
 import Home from "./pages/Home";
 
 // Home is the most likely first paint, so it loads eagerly. Every other
@@ -12,6 +13,10 @@ const Work = lazy(() => import("./pages/Work"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+function LazyRoute({ children }) {
+  return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
+}
+
 export default function App() {
   return (
     <Routes>
@@ -20,41 +25,41 @@ export default function App() {
         <Route
           path="/about"
           element={
-            <Suspense fallback={null}>
+            <LazyRoute>
               <About />
-            </Suspense>
+            </LazyRoute>
           }
         />
         <Route
           path="/services"
           element={
-            <Suspense fallback={null}>
+            <LazyRoute>
               <Services />
-            </Suspense>
+            </LazyRoute>
           }
         />
         <Route
           path="/work"
           element={
-            <Suspense fallback={null}>
+            <LazyRoute>
               <Work />
-            </Suspense>
+            </LazyRoute>
           }
         />
         <Route
           path="/contact"
           element={
-            <Suspense fallback={null}>
+            <LazyRoute>
               <Contact />
-            </Suspense>
+            </LazyRoute>
           }
         />
         <Route
           path="*"
           element={
-            <Suspense fallback={null}>
+            <LazyRoute>
               <NotFound />
-            </Suspense>
+            </LazyRoute>
           }
         />
       </Route>
