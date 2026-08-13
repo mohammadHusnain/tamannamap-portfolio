@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../Reveal";
+import { CONTACT_FORM_PATH } from "../../constants/links";
 
 export default function CtaBanner() {
   return (
@@ -15,7 +16,7 @@ export default function CtaBanner() {
           business day with next steps and a rough estimate.
         </Reveal>
         <Reveal as="div" variant="fade" delay={0.3} className="cta__action">
-          <Link to="/contact" className="btn">
+          <Link to={CONTACT_FORM_PATH} className="btn">
             Request a Proposal <span aria-hidden="true">→</span>
           </Link>
         </Reveal>

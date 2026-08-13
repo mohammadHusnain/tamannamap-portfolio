@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useNavCondense } from "../hooks/useNavCondense";
 
-const quoteLink = "/contact#contact-form";
+import { CONTACT_FORM_PATH } from "../constants/links";
 
 const links = [
   { to: "/", label: "Home" },
@@ -83,7 +83,7 @@ export default function Nav() {
           ))}
         </nav>
 
-        <Link to={quoteLink} className="nav__cta">
+        <Link to={CONTACT_FORM_PATH} className="nav__cta">
           Get a Quote
         </Link>
       </header>
@@ -109,7 +109,7 @@ export default function Nav() {
             </Link>
           ))}
         </nav>
-        <Link to={quoteLink} className="mobile-menu__cta" onClick={close} tabIndex={open ? 0 : -1}>
+        <Link to={CONTACT_FORM_PATH} className="mobile-menu__cta" onClick={close} tabIndex={open ? 0 : -1}>
           Get a Quote <span aria-hidden="true">→</span>
         </Link>
       </div>
