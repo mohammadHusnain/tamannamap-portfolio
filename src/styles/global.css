@@ -1620,6 +1620,30 @@ html.lenis body {
   border-bottom: 1px solid var(--line);
 }
 
+.service-row__card,
+.service-row__details {
+  min-width: 0;
+}
+
+.service-row__details {
+  overflow-wrap: anywhere;
+}
+
+.service-row__details h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  margin: 0.6rem 0 1rem;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.service-row__card .unit__name {
+  color: var(--paper);
+  overflow-wrap: anywhere;
+  line-height: 1.15;
+}
+
 .section--dark .service-row,
 .section--moss .service-row {
   border-bottom-color: var(--line-invert);
@@ -1654,24 +1678,12 @@ html.lenis body {
   color: var(--bronze-dim);
 }
 
-.service-row__card .unit__name {
-  color: var(--paper);
-}
-
 .service-row__details .unit__index {
   font-family: var(--font-display);
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   color: var(--bronze-dim);
   text-transform: uppercase;
-}
-
-.service-row__details h3 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: var(--fs-h2);
-  margin: 0.6rem 0 1rem;
-  line-height: 1.1;
 }
 
 .service-row__details p {
@@ -1709,6 +1721,7 @@ html.lenis body {
 .services-page .service-section {
   padding-top: clamp(3rem, 6vw, var(--section-pad));
   padding-bottom: clamp(3rem, 6vw, var(--section-pad));
+  overflow-x: clip;
 }
 
 .services-page .service-section:not(.section--dark):not(.section--moss) {
